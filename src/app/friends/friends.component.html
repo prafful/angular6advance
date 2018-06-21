@@ -1,3 +1,28 @@
-<p>
-  friends works!
-</p>
+<h3>
+  My Friends
+</h3>
+Add friend:<input type="text" [(ngModel)]="friendName" > &nbsp;
+<button (click)="addFriend()">Add</button> {{ friendName }}
+<ul>
+  <li *ngFor="let friend of friends; let counter = index">
+      {{counter+1}}. {{friend | uppercase}} 
+      <button (click)="removeFriend(counter)">Unfriend</button>
+  </li>
+ </ul>
+
+{{ friends }}
+<hr>
+Cities: <br>
+<ul>
+    <li *ngFor="let l of location">
+      {{l.city}} : {{l.code}}
+    </li>
+</ul>
+
+Salary: {{ salary | currency:'EUR'  }}
+<br>
+Date: {{ currentDate | date:'ss'}}
+<br>
+<h3>Custom Pipe</h3>
+Unsorted Friends: {{friends}} <br>
+Sorted Friends: {{ friends |  stringSort}}

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 
 import { AppComponentNew } from './app.component';
@@ -15,48 +16,8 @@ import { ColleaguesComponent } from './colleagues/colleagues.component';
 
 import {myroutes} from './myroutes.module'
 
-/* const myroutes:Routes = [
-  
-  {
-    path:'',
-    redirectTo:'father',
-    pathMatch:'full'
-  },
-  {
-    path:'family',
-    component:NuclearfamilyComponent,
-    children:[
-      {
-        path:'father',
-        component:FatherComponent
-      },
-      {
-        path:'mother',
-        component:MotherComponent
-      },
-      {
-        path:'son',
-        component:SonComponent
-      },
-      {
-        path:'daughter',
-        component:DaughterComponent
-      }
-    ]
-  },
-  {
-    path:'friends',
-    component:FriendsComponent
-  },
-  {
-    path:'colleague',
-    component:ColleaguesComponent
-  },
-  {
-    path:'**',
-    component:PagenotfoundComponent
-  }
-] */
+import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
+
 
 @NgModule({
   declarations: [
@@ -68,11 +29,13 @@ import {myroutes} from './myroutes.module'
     NuclearfamilyComponent,
     PagenotfoundComponent,
     FriendsComponent,
-    ColleaguesComponent
+    ColleaguesComponent,
+    StringSortPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(myroutes)
+    RouterModule.forRoot(myroutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponentNew]
