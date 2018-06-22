@@ -25,4 +25,16 @@ Date: {{ currentDate | date:'ss'}}
 <br>
 <h3>Custom Pipe</h3>
 Unsorted Friends: {{friends}} <br>
-Sorted Friends: {{ friends |  stringSort}}
+Sorted Friends: {{ friends |  stringSort:'dsc'}}
+<br>
+Unsorted Scores : {{scores}} <br>
+Sorted Scores: {{ scores | numberSort:'dsc' }}
+<br>
+<h3>Auto Search Filter</h3>
+  Search: <input type="text" [(ngModel)]="searchString"> {{searchString}}
+<ul>
+  <li *ngFor="let friend of friends | autoSearch:searchString; let counter = index ">
+      {{counter+1}}. {{friend | uppercase}} 
+    
+  </li>
+ </ul>

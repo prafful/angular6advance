@@ -11,6 +11,8 @@ export class FriendsComponent implements OnInit {
   friendName = "Name of Your Friend"
 
  friends:string[] = ['mohan', 'sundeep', 'gita', 'meeta', 'deepa', 'manish', 'sohan']
+ 
+ scores:number[] = [10,5,4,78,98,55,22,12,36]
 
  location = [
    {
@@ -27,6 +29,10 @@ export class FriendsComponent implements OnInit {
     code:"0141"
   }
  ]
+
+ 
+
+
 
  salary = 5000
 

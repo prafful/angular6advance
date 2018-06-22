@@ -1,0 +1,31 @@
+<h3>Multiple Field Auto Search</h3>
+Name Search: <input type="text" [(ngModel)]="nameSearch"> {{searchString}}
+<br>
+Username Search: <input type="text" [(ngModel)]="usernameSearch"> {{searchString}}
+<br>
+Email Search: <input type="text" [(ngModel)]="emailSearch"> {{searchString}}
+<br>
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>username</td>
+      <td>Email</td>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of typicodeData | multipleSearch:nameSearch">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    
+    </tr>
+
+  </tbody>
+
+</table>

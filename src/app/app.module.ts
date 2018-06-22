@@ -13,10 +13,14 @@ import { NuclearfamilyComponent } from './family/nuclearfamily/nuclearfamily.com
 import { PagenotfoundComponent } from './notfound/pagenotfound/pagenotfound.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
+import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
 
 import {myroutes} from './myroutes.module'
 
 import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
+import { NumberSortPipe} from '../app/custompipe/number-sort.pipe'
+import { AutoSearchPipe} from '../app/custompipe/auto-search.pipe'
+import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
 
 
 @NgModule({
@@ -30,7 +34,11 @@ import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
     PagenotfoundComponent,
     FriendsComponent,
     ColleaguesComponent,
-    StringSortPipe
+    StringSortPipe,
+    NumberSortPipe,
+    AutoSearchPipe,
+    JsonPipeComponent,
+    MultipleSearchPipe
   ],
   imports: [
     BrowserModule,

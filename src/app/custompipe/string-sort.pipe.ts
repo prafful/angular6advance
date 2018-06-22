@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StringSortPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(source: any, args?: any): any {
   if(args === 'dsc'){
-    return value.sort().reverse()
+    return source.sort().reverse()
   }
   if(args === 'asc'){
-    return value.sort();
+    return source.sort();
   }
 
-  return value.sort();
+  return source.sort();
 
     
   }

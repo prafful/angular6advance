@@ -9,6 +9,7 @@ import { NuclearfamilyComponent } from './family/nuclearfamily/nuclearfamily.com
 import { PagenotfoundComponent } from './notfound/pagenotfound/pagenotfound.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
+import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
 
 
 
@@ -48,8 +49,10 @@ export const myroutes:Routes = [
     {
       path:'colleague',
       component:ColleaguesComponent
-    },
-    {
+    },{
+      path:'jsonpipe',
+      component:JsonPipeComponent
+    },{
       path:'**',
       component:PagenotfoundComponent
     }
