@@ -11,6 +11,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
 import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
 
+import { UsedirectiveComponent } from "./customdirective/usedirective/usedirective.component";
 
 
 export const myroutes:Routes = [
@@ -52,6 +53,9 @@ export const myroutes:Routes = [
     },{
       path:'jsonpipe',
       component:JsonPipeComponent
+    },{
+      path:'customdirective',
+      component:UsedirectiveComponent
     },{
       path:'**',
       component:PagenotfoundComponent

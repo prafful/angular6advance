@@ -14,6 +14,8 @@ import { PagenotfoundComponent } from './notfound/pagenotfound/pagenotfound.comp
 import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
 import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
+import { UsedirectiveComponent } from "./customdirective/usedirective/usedirective.component";
+
 
 import {myroutes} from './myroutes.module'
 
@@ -21,6 +23,7 @@ import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
 import { NumberSortPipe} from '../app/custompipe/number-sort.pipe'
 import { AutoSearchPipe} from '../app/custompipe/auto-search.pipe'
 import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
+import {CustombgDirective} from "./mydirective/custombg.directive"
 
 
 @NgModule({
@@ -38,7 +41,9 @@ import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
     NumberSortPipe,
     AutoSearchPipe,
     JsonPipeComponent,
-    MultipleSearchPipe
+    MultipleSearchPipe,
+    UsedirectiveComponent,
+    CustombgDirective
   ],
   imports: [
     BrowserModule,
