@@ -25,6 +25,9 @@ import { AutoSearchPipe} from '../app/custompipe/auto-search.pipe'
 import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
 import {CustombgDirective} from "./mydirective/custombg.directive"
 
+import { ServiceOneService } from "./myservice/service-one.service";
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,7 @@ import {CustombgDirective} from "./mydirective/custombg.directive"
     RouterModule.forRoot(myroutes),
     FormsModule
   ],
-  providers: [],
+  providers: [ServiceOneService],
   bootstrap: [AppComponentNew]
 })
 
