@@ -1,5 +1,5 @@
 <p>I am outside custom directive</p>
-<p ctsCustombg>
+<p custombg>
   usedirective works!
 </p>
 <h3 >Inbuilt Directives</h3>
@@ -29,13 +29,14 @@
 <span  [class.active]="scores==5"><a (click)="scores=5">5</a></span> &nbsp;
 <span  [class.active]="scores==10"><a (click)="scores=10">10</a></span> &nbsp;
 <span  [class.active]="scores==15"><a (click)="scores=15">15</a></span> &nbsp; <br>
+
 <input type="number" [(ngModel)] = "scores" min="0" max="15" step="5"> {{scores}}
 
 
 <div [ngSwitch]="scores">
-  <div *ngSwitchCase="5" ctsCustombg> Your score is 5</div>
-  <div *ngSwitchCase="10" ctsCustombg> Your score is 10</div>
-  <div *ngSwitchCase="15" ctsCustombg> Your score is 15</div>
-  <div *ngSwitchDefault ctsCustombg>Please input valid score!!!</div>
+  <div *ngSwitchCase="5" custombg> Your score is 5</div>
+  <div *ngSwitchCase="10" custombg> Your score is 10</div>
+  <div *ngSwitchCase="15" custombg> Your score is 15</div>
+  <div *ngSwitchDefault custombg>Please input valid score!!!</div>
 </div>
 

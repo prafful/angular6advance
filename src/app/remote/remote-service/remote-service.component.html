@@ -1,0 +1,27 @@
+<p>
+  remote-service works!
+</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>username</td>
+      <td>Email</td>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td><a routerLink="/remoteapi/{{user.id}}">{{user.id}}</a></td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    
+    </tr>
+
+  </tbody>
+
+</table>
+

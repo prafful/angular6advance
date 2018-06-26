@@ -10,6 +10,8 @@ import { PagenotfoundComponent } from './notfound/pagenotfound/pagenotfound.comp
 import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
 import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
+import { RemoteServiceComponent } from "./remote/remote-service/remote-service.component";
+import { RemoteServiceDataComponent } from "./remote/remote-service-data/remote-service-data.component";
 
 import { UsedirectiveComponent } from "./customdirective/usedirective/usedirective.component";
 
@@ -56,6 +58,12 @@ export const myroutes:Routes = [
     },{
       path:'customdirective',
       component:UsedirectiveComponent
+    },{
+        path:'remoteapi',
+        component:RemoteServiceComponent
+    },{
+      path:'remoteapi/:id',
+      component:RemoteServiceDataComponent
     },{
       path:'**',
       component:PagenotfoundComponent

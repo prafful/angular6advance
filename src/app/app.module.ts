@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 
 import { AppComponentNew } from './app.component';
@@ -15,6 +16,8 @@ import { FriendsComponent } from './friends/friends.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
 import { JsonPipeComponent } from "./multiplesearch/json-pipe/json-pipe.component";
 import { UsedirectiveComponent } from "./customdirective/usedirective/usedirective.component";
+import { RemoteServiceComponent } from "./remote/remote-service/remote-service.component";
+import { RemoteServiceDataComponent } from "./remote/remote-service-data/remote-service-data.component";
 
 
 import {myroutes} from './myroutes.module'
@@ -26,6 +29,7 @@ import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
 import {CustombgDirective} from "./mydirective/custombg.directive"
 
 import { ServiceOneService } from "./myservice/service-one.service";
+import { RemoteapiserviceService } from "./myservice/remoteapiservice.service";
 
 
 
@@ -46,14 +50,17 @@ import { ServiceOneService } from "./myservice/service-one.service";
     JsonPipeComponent,
     MultipleSearchPipe,
     UsedirectiveComponent,
-    CustombgDirective
+    CustombgDirective,
+    RemoteServiceComponent, 
+    RemoteServiceDataComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(myroutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ServiceOneService],
+  providers: [ServiceOneService,RemoteapiserviceService],
   bootstrap: [AppComponentNew]
 })
 
