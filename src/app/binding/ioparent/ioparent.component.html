@@ -1,0 +1,9 @@
+<h3>Parent</h3>
+
+Say something:<input type="text" [(ngModel)]="parent"> {{parent}}
+
+<hr>
+
+<h3>Child</h3>
+
+<cts-iochild [toParent]='parent' (parcelToParent)="messageFromChild($event)"></cts-iochild>

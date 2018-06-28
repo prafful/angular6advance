@@ -14,6 +14,17 @@ import { RemoteServiceComponent } from "./remote/remote-service/remote-service.c
 import { RemoteServiceDataComponent } from "./remote/remote-service-data/remote-service-data.component";
 
 import { UsedirectiveComponent } from "./customdirective/usedirective/usedirective.component";
+//import { IoparentComponent } from "./binding/ioparent/ioparent.component";
+
+import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
+import { NumberSortPipe} from '../app/custompipe/number-sort.pipe'
+import { AutoSearchPipe} from '../app/custompipe/auto-search.pipe'
+import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
+import {CustombgDirective} from "./mydirective/custombg.directive"
+
+import { ServiceOneService } from "./myservice/service-one.service";
+import { IoparentComponent } from "./binding/ioparent/ioparent.component";
+import { IochildComponent } from "./binding/iochild/iochild.component";
 
 
 export const myroutes:Routes = [
@@ -64,6 +75,9 @@ export const myroutes:Routes = [
     },{
       path:'remoteapi/:id',
       component:RemoteServiceDataComponent
+    },{
+      path:'iobinding',
+      component:IoparentComponent
     },{
       path:'**',
       component:PagenotfoundComponent

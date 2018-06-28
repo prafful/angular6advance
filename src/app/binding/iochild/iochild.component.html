@@ -1,0 +1,12 @@
+<p>
+  iochild works! Can I access variable in parent component?
+
+</p>
+
+
+I am coming from parent: {{toParent}}
+
+<br>
+Change me to something: 
+<input type="text" [(ngModel)]="toParent">
+<button (click)="sendBackToParent(toParent)">Change Me</button>

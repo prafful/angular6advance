@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 import { AppComponentNew } from './app.component';
@@ -20,7 +21,9 @@ import { RemoteServiceComponent } from "./remote/remote-service/remote-service.c
 import { RemoteServiceDataComponent } from "./remote/remote-service-data/remote-service-data.component";
 
 
-import {myroutes} from './myroutes.module'
+//import {myroutes} from './myroutes.module'
+
+import { RemoteapiserviceService } from "./myservice/remoteapiservice.service";
 
 import { StringSortPipe } from '../app/custompipe/string-sort.pipe'
 import { NumberSortPipe} from '../app/custompipe/number-sort.pipe'
@@ -29,9 +32,66 @@ import { MultipleSearchPipe} from '../app/custompipe/multiple-search.pipe'
 import {CustombgDirective} from "./mydirective/custombg.directive"
 
 import { ServiceOneService } from "./myservice/service-one.service";
-import { RemoteapiserviceService } from "./myservice/remoteapiservice.service";
+import { IoparentComponent } from "./binding/ioparent/ioparent.component";
+import { IochildComponent } from "./binding/iochild/iochild.component";
 
 
+const myroutes:Routes = [
+  
+  {
+    path:'',
+    redirectTo:'father',
+    pathMatch:'full'
+  },
+  {
+    path:'family',
+    component:NuclearfamilyComponent,
+    children:[
+      {
+        path:'father',
+        component:FatherComponent
+      },
+      {
+        path:'mother',
+        component:MotherComponent
+      },
+      {
+        path:'son',
+        component:SonComponent
+      },
+      {
+        path:'daughter',
+        component:DaughterComponent
+      }
+    ]
+  },
+  {
+    path:'friends',
+    component:FriendsComponent
+  },
+  {
+    path:'colleague',
+    component:ColleaguesComponent
+  },{
+    path:'jsonpipe',
+    component:JsonPipeComponent
+  },{
+    path:'customdirective',
+    component:UsedirectiveComponent
+  },{
+      path:'remoteapi',
+      component:RemoteServiceComponent
+  },{
+    path:'remoteapi/:id',
+    component:RemoteServiceDataComponent
+  },{
+    path:'iobinding',
+    component:IoparentComponent
+  },{
+    path:'**',
+    component:PagenotfoundComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -52,13 +112,16 @@ import { RemoteapiserviceService } from "./myservice/remoteapiservice.service";
     UsedirectiveComponent,
     CustombgDirective,
     RemoteServiceComponent, 
-    RemoteServiceDataComponent
+    RemoteServiceDataComponent,
+    IoparentComponent,
+    IochildComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(myroutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [ServiceOneService,RemoteapiserviceService],
   bootstrap: [AppComponentNew]
